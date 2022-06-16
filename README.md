@@ -1,9 +1,9 @@
 # How to start the project
 ## Install all npm pakages
 Open your terminal in the project directory
-> ```yarn install``` 
+> yarn install
 
-> ```npm install```
+> npm install
  
 ## Setup server
 Rename .sample.env file to ``.env``.
