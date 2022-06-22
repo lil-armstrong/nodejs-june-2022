@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-require("./schema/product");
+require("./model/product.model");
+require("./model/user.model");
 
 const { DB_URI, DB_PASSWORD, DB_USERNAME, DB_NAME } = process.env;
 

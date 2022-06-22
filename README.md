@@ -1,5 +1,5 @@
 # How to start the project
-## Install all npm pakages
+## Install all npm packages
 Open your terminal in the project directory
 > yarn install
 

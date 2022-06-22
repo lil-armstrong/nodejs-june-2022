@@ -1,11 +1,10 @@
-/** @format */
-
 "use strict";
 /** @format */
 
+
 const express = require("express");
 const Joi = require("joi");
-const Product = require("../db/schema/product");
+const Product = require("../db/model/product.model");
 const { responseObject } = require("../helpers");
 const router = express.Router();
 const debug = process.env.NODE_ENV !== "production";

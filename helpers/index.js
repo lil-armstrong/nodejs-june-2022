@@ -1,3 +1,4 @@
+"use strict"
 /**
  * @format
  * @description Server response object
@@ -7,8 +8,18 @@
  * @returns
  */
 
+const jwt = require('jwtwebtoken');
+
 module.exports.responseObject = (data, status, error = null) => ({
   data,
   status,
   error,
 });
+
+module.exports.generateAccessToken = (accessObject, options = {
+  expiresIn: '1800s'
+}) => {
+  return jwt.sign(accessObject, process.env.TOKEN_SECRET, options);
+}
+
+

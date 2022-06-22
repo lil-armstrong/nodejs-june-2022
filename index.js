@@ -3,6 +3,7 @@ const initDB = require("./db");
 const express = require("express");
 const bodyParser = require("body-parser");
 const productRoute = require("./routes/product");
+const authRoute = require("./routes/auth");
 const app = express();
 const { PORT } = process.env;
 
@@ -26,7 +27,7 @@ initDB(() => {
   ]);
   // Setup routes
   app.use("/product", productRoute);
-
+  app.use("/auth", authRoute)
   // Error handler
   app.use((error, req, res, next) => {
     res.json({

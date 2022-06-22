@@ -1,0 +1,8 @@
+Classwork
+Create a new route for authentication. The new route show allow the client access to the following API endpoints
+
+- Login - requires (email, password)
+- Register - requires (email, username, password, confirm_password, first_name, last_name)
+- Request password reset - requires (email)
+- Reset password - requires (password, confirm_new_password, token)
+- Confirm email - requires (token, email)
