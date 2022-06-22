@@ -32,6 +32,9 @@ validators.requestPasswordReset = (req, res, next) => {
 validators.resetPassword = (req, res, next) => {
   next();
 };
+validators.confirmEmail = (req, res, next) => {
+  next();
+};
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
@@ -136,12 +139,12 @@ async function confirmEmail(req, res, next) {
 }
 
 router.post("/login", login);
-router.post("/register", validators?.register, register);
+/* router.post("/register", validators?.register, register);
 router.post(
   "/requestPasswordReset",
   validators?.requestPasswordReset,
   requestPasswordReset
 );
 router.put("/resetPassword", validators?.resetPassword, resetPassword);
-router.post("/confirmEmail", validators?.confirmEmail, confirmEmail);
+router.post("/confirmEmail", validators?.confirmEmail, confirmEmail); */
 module.exports = router;

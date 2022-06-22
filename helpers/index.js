@@ -1,4 +1,6 @@
-"use strict"
+/** @format */
+
+"use strict";
 /**
  * @format
  * @description Server response object
@@ -8,7 +10,7 @@
  * @returns
  */
 
-const jwt = require('jwtwebtoken');
+const jwt = require("jsonwebtoken");
 
 module.exports.responseObject = (data, status, error = null) => ({
   data,
@@ -16,10 +18,14 @@ module.exports.responseObject = (data, status, error = null) => ({
   error,
 });
 
-module.exports.generateAccessToken = (accessObject, options = {
-  expiresIn: '1800s'
-}) => {
-  return jwt.sign(accessObject, process.env.TOKEN_SECRET, options);
-}
-
-
+module.exports.generateAccessToken = (
+  accessObject,
+  options = {
+    expiresIn: "1800s",
+  }
+) => {
+  return jwt.sign(accessObject, process.env.TOKEN_SECRET, {
+    ...options,
+    algorithm: "ES256",
+  });
+};
